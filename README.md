@@ -1,5 +1,5 @@
 # grwlrplate
-Gulp x Webpack x Livereload Boilerplate
+Gulp x React x Webpack x Livereload Boilerplate
 
 ## Getting Started
 - `npm install`
