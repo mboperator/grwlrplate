@@ -27,7 +27,8 @@
     "tiny-lr": "",
     "jsx-loader": "^0.12.2",
     "connect-livereload": "",
-    "gulp-autoprefixer": ""
+    "gulp-autoprefixer": "",
+    "webpack": "^1.7.3"
   },
   "jshintConfig": {
     "esnext": true,
