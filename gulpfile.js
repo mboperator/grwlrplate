@@ -5,21 +5,8 @@ var
   sourcemaps = require('gulp-sourcemaps'),
   minifycss = require('gulp-minify-css'),
   rename = require('gulp-rename'),
-  autoprefixer = require('gulp-autoprefixer');
-
-gulp.task('express', function() {
-  var express = require('express');
-  var app = express();
-  app.use(require('connect-livereload')({port: 7071}));
-  app.use(express.static('public'));
-  app.listen(7070);
-});
-
-var tinylr;
-gulp.task('livereload', function() {
-  tinylr = require('tiny-lr')();
-  tinylr.listen(7071);
-});
+  autoprefixer = require('gulp-autoprefixer'),
+  tinylr;
 
 function notifyLiveReload(event) {
   var fileName = require('path').relative(__dirname, event.path);
@@ -30,6 +17,19 @@ function notifyLiveReload(event) {
     }
   });
 }
+
+gulp.task('express', function() {
+  var express = require('express');
+  var app = express();
+  app.use(require('connect-livereload')({port: 7071}));
+  app.use(express.static('public'));
+  app.listen(7070);
+});
+
+gulp.task('livereload', function() {
+  tinylr = require('tiny-lr')();
+  tinylr.listen(7071);
+});
 
 gulp.task('webpack', function() {
   return gulp.src('./lib/js/app.js')
