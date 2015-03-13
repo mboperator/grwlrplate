@@ -23,11 +23,11 @@
     "gulp-minify-css": "",
     "gulp-rename": "",
     "gulp-webpack": "",
-    "gulp-ruby-sass": "",
+    "gulp-sass": "",
     "tiny-lr": "",
     "jsx-loader": "^0.12.2",
     "connect-livereload": "",
-    "autoprefixer-core": "^5.1.7"
+    "gulp-autoprefixer": ""
   },
   "jshintConfig": {
     "esnext": true,
