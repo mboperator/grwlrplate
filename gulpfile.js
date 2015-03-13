@@ -1,7 +1,7 @@
 var 
   gulp = require('gulp'),
   webpack = require('gulp-webpack'),
-  postcss = require('gulp-postcss'),
+  sass = require('gulp-ruby-sass'),
   sourcemaps = require('gulp-sourcemaps'),
   minifycss = require('gulp-minify-css'),
   rename = require('gulp-rename'),
@@ -38,8 +38,9 @@ gulp.task('webpack', function() {
 });
 
 gulp.task('styles', function() {
-  return gulp.src(['./public/css/*.css'])
-    .pipe(postcss([ autoprefixer({ browsers: ['last 2 version'] }) ]))
+  return gulp.src(['./lib/css/*.scss'])
+    .pipe(sass({ style: 'expanded' }))
+    .pipe(autoprefixer({ browsers: ['last 2 version'] }) )
     .pipe(gulp.dest('./public/assets/css/'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
