@@ -1,11 +1,11 @@
 var 
   gulp = require('gulp'),
   webpack = require('gulp-webpack'),
-  sass = require('gulp-ruby-sass'),
+  sass = require('gulp-sass'),
   sourcemaps = require('gulp-sourcemaps'),
   minifycss = require('gulp-minify-css'),
   rename = require('gulp-rename'),
-  autoprefixer = require('autoprefixer-core');
+  autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('express', function() {
   var express = require('express');
@@ -39,7 +39,7 @@ gulp.task('webpack', function() {
 
 gulp.task('styles', function() {
   return gulp.src(['./lib/css/*.scss'])
-    .pipe(sass({ style: 'expanded' }))
+    .pipe(sass())
     .pipe(autoprefixer({ browsers: ['last 2 version'] }) )
     .pipe(gulp.dest('./public/assets/css/'))
     .pipe(rename({suffix: '.min'}))
@@ -49,9 +49,9 @@ gulp.task('styles', function() {
 
 gulp.task('watch', function() {
   gulp.watch('./lib/js/*.js', ['webpack']);
-  gulp.watch('./lib/css/*.css', ['styles']);
+  gulp.watch('./lib/css/*.scss', ['styles']);
   gulp.watch('./public/*.html', notifyLiveReload);
-  gulp.watch('./public/assets/css/*.css', notifyLiveReload);
+  gulp.watch('./public/assets/css/*.min.css', notifyLiveReload);
   gulp.watch('./public/assets/js/*.js', notifyLiveReload);
 });
 
