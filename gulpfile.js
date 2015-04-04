@@ -48,7 +48,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./lib/js/*.js', ['webpack']);
+  gulp.watch('./lib/js/**/*.js', ['webpack']);
   gulp.watch('./lib/css/*.scss', ['styles']);
   gulp.watch('./public/*.html', notifyLiveReload);
   gulp.watch('./public/assets/css/*.min.css', notifyLiveReload);
