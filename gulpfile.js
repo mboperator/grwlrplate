@@ -29,7 +29,6 @@ gulp.task('browsersync', function() {
 gulp.task('browsersync-build', function() {
   return gulp.src(cssPath)
             .pipe(sass({errLogToConsole: true }))
-            .pipe(cached('styles'))
             .pipe(autoprefixer({ browsers: ['last 2 versions']}))
             .pipe(gulp.dest(cssOutPath))
             .pipe(reload({stream: true}));
