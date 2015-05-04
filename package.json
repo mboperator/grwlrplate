@@ -10,8 +10,8 @@
   "author": "Me",
   "license": "ISC",
   "dependencies": {
-    "react": "0.12.2",
-    "uuid": "",
+    "react": "^0.13",
+    "react-router": "^0.13",
     "q": "^1.2.0",
     "reflux": "^0.2.6",
     "underscore": "1.8.2"
