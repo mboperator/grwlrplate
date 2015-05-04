@@ -30,6 +30,8 @@ module.exports = function() {
     }
   });
 
+  app.use(express.static('public'));
+
   var compiler = webpack(config);
 
   var server = new WebpackDevServer(compiler, {
