@@ -13,7 +13,7 @@ var
 var cssPath = "lib/css/**/*.scss";
 var cssOutPath = "public/assets/css";
 var jsPath = "lib/js/**/*.js";
-var jsOutPath = "public/assets/js";
+var jsOutPath = "dist/";
 
 gulp.task('webpack-hot', webpackServer); 
 

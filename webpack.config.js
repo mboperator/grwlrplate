@@ -1,9 +1,5 @@
 var webpack = require('webpack');
 
-var plugins = [
-  new webpack.optimize.CommonsChunkPlugin('./common.js')
-];
-
 module.exports = {
   devtool: process.env.NODE_ENV !== 'production' ? 'eval' : null,
 
@@ -19,7 +15,5 @@ module.exports = {
     loaders: [
       { test: /\.js$/, loader: 'jsx-loader?harmony' }
     ]
-  },
-
-  plugins: plugins
+  }
 };
