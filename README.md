@@ -16,4 +16,4 @@ Gulp x React x Webpack x BrowserSync Boilerplate
 ## Folder Structure
 - Edit files in lib/*
 - Compiled assets are sent to public/assets
-- To build for production run `gulp`
+- To build for production run `npm build`
